@@ -13,6 +13,7 @@ public class MainView extends ConsoleHelper {
     public MainView(){
         this.option = 31;
         this.scanner = new Scanner(System.in);
+        this.facultyMenuView = new FacultyMenuView();
     }
     public void run() throws IOException, InterruptedException {
         clearConsole();
