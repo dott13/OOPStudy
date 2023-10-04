@@ -29,6 +29,11 @@ public class FacultyMenuView {
         switch (options){
             case 1: clearConsole();
                     addFaculty();
+                System.out.println("Faculty added");
+                run();
+                    break;
+            case 2: clearConsole();
+                    university.getFaculties();
         }
     }
 

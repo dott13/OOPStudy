@@ -5,10 +5,26 @@ import java.util.Scanner;
 
 public class Faculty {
         private String name;
+
+        public String getName() {
+                return name;
+        }
+
         private String abbreviation;
+
+        public String getAbbreviation() {
+                return abbreviation;
+        }
+
         private List<Student> students;
         private StudyField studyField;
+
+        public StudyField getStudyField() {
+                return studyField;
+        }
+
         private Scanner scanner;
+
         public Faculty(){
                 this.name = "";
                 this.abbreviation = "";
