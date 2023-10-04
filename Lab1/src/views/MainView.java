@@ -6,15 +6,15 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class MainView extends ConsoleHelper {
-    private int option;
+    private Integer option;
     private Scanner scanner;
     private FacultyMenuView facultyMenuView;
     private StudentMenuView studentMenuView;
-    MainView(){
-        this.option = Integer.parseInt(null);
+    public MainView(){
+        this.option = 31;
         this.scanner = new Scanner(System.in);
     }
-    public void run() throws IOException {
+    public void run() throws IOException, InterruptedException {
         clearConsole();
         System.out.println("TUM - Management System");
         System.out.println("Chose What you want to do");;
