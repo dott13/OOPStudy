@@ -1,0 +1,47 @@
+[33mcommit 6f6dc808f77e4a3e1c5b190b926798fa147a6db2[m[33m ([m[1;36mHEAD -> [m[1;32mpre-test[m[33m, [m[1;31morigin/pre-test[m[33m)[m
+Author: Tudor Popov <supreme.notfound@gmail.com>
+Date:   Thu Oct 5 01:53:02 2023 +0300
+
+    added the option to go back from faculty menu to main menu
+
+[33mcommit 19ae67fb59c69e77e9cb5fb649ccd67db8153e8a[m
+Author: Tudor Popov <supreme.notfound@gmail.com>
+Date:   Thu Oct 5 01:22:01 2023 +0300
+
+    added the option to see all the faculties present in our university
+
+[33mcommit 3cfc5ea9d2b195096da3f7da5cde52c450cbdfc2[m
+Author: Tudor Popov <supreme.notfound@gmail.com>
+Date:   Thu Oct 5 01:08:27 2023 +0300
+
+    added University class and made FacultyMenuView with option to create faculty
+
+[33mcommit 16a26335cc099741a1bec11a534d3e904a919cd3[m
+Author: Tudor Popov <supreme.notfound@gmail.com>
+Date:   Thu Oct 5 00:16:49 2023 +0300
+
+    Made ClearScreen in ConsoleHelper working
+
+[33mcommit 80a17159a8144fb375ae2ac394a3189eb95078fb[m
+Author: Tudor Popov <supreme.notfound@gmail.com>
+Date:   Thu Oct 5 00:06:15 2023 +0300
+
+    Added the views with our menus that we will use to work with our application
+
+[33mcommit e2b176b39efe06f3915eb5e20cf4730cd779a4fa[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Tudor Popov <supreme.notfound@gmail.com>
+Date:   Tue Oct 3 09:02:02 2023 +0300
+
+    added all of the standart classes Student.java, Faculty.java, University.java
+
+[33mcommit 3fd9581cad1ab8472a56f565e4ec210f9ebc121b[m
+Author: Tudor Popov <supreme.notfound@gmail.com>
+Date:   Mon Sep 11 15:00:33 2023 +0300
+
+    first class
+
+[33mcommit 06f52ecc69e2d3335af5793a7edb09782b1184ce[m
+Author: dott13 <80911906+dott13@users.noreply.github.com>
+Date:   Mon Sep 11 11:43:08 2023 +0300
+
+    Initial commit
