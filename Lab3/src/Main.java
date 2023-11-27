@@ -1,4 +1,5 @@
 import queue.QueueService;
+import stack.LinkedStackService;
 import stack.StackService;
 
 public class Main {
@@ -41,6 +42,16 @@ public class Main {
 
         System.out.println("Is the stack empty?" + stack.isEmpty());
 
+        //LINKED STACK
+        System.out.println("\nLinked Stack");
+        LinkedStackService linkedStack = new LinkedStackService();
 
+        stack.push(1);
+        stack.push(6);
+        stack.instances();
+        System.out.println("Top Instance:" + stack.peek());
+        System.out.println("Delete from LinkedStack:" + stack.pop());
+
+        stack.instances();
     }
 }
