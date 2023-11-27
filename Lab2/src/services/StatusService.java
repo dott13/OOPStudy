@@ -5,13 +5,13 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-public class StatusService extends FileService{
-    private Date lastSnapshotTime;
-    private Set<String> lastSnapshotFile;
+public class StatusService implements IFileService{
+    private final Date lastSnapshotTime;
+    private final Set<String> lastSnapshotFiles;
 
-    public StatusService(Date lastSnapshotTime, Set<String> lastSnapshotFile){
-        this.lastSnapshotFile = lastSnapshotFile;
+    public StatusService(Date lastSnapshotTime, Set<String> lastSnapshotFiles) {
         this.lastSnapshotTime = lastSnapshotTime;
+        this.lastSnapshotFiles = lastSnapshotFiles;
     }
 
     @Override
@@ -35,14 +35,14 @@ public class StatusService extends FileService{
 
                     currentFiles.add(file.getName());
 
-                    if (!lastSnapshotFile.contains(file.getName())) {
+                    if (!lastSnapshotFiles.contains(file.getName())) {
                         status = "New File";
                     }
 
                     System.out.println(file.getName() + " - " + status);
                 }
 
-                for (String fileName : lastSnapshotFile) {
+                for (String fileName : lastSnapshotFiles) {
                     if (!currentFiles.contains(fileName)) {
                         System.out.println(fileName + " - Deleted File");
                     }

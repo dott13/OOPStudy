@@ -2,7 +2,7 @@ package services;
 
 import java.util.Date;
 
-public class CommitService extends FileService{
+public class CommitService implements IFileService{
     private Date snapshotTime;
 
     public CommitService() {

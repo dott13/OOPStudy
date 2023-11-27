@@ -1,6 +1,8 @@
 package views;
 
 import com.sun.tools.javac.Main;
+import document_flow.FileService;
+import document_flow.SnapshotReader;
 import services.CommitService;
 import services.InformationService;
 import services.StatusService;
@@ -14,7 +16,7 @@ import java.util.Set;
 public class MainView {
     private final CommitService commitService;
     private Set<String> lastSnapshotFile;
-    private String folderPath;
+    private final String folderPath;
     private final File folder;
     private final Scanner scanner;
     private boolean running;
@@ -45,20 +47,25 @@ public class MainView {
         String[] parts = input.split(" ");
         String command = parts[0].toLowerCase();
         switch (command) {
-            case "commit" -> {
-                commitService.execute(parts);
-                lastSnapshotFile = getSnapshotFile(folder);
-            }
-            case "info" -> {
-                InformationService infoService = new InformationService();
-                infoService.execute(parts);
-            }
-            case "status" -> {
-                StatusService statusService = new StatusService(commitService.getSnapshotTime(), lastSnapshotFile);
-                statusService.execute(parts);
-            }
-            case "exit" -> running = false;
-            default -> System.out.println("Invalid command");
+            case "commit":
+                FileService commitExecutor = new FileService(commitService);
+                commitExecutor.execute(parts);
+                lastSnapshotFile = SnapshotReader.getSnapshotFiles(folder);
+                break;
+            case "info":
+                FileService infoExecutor = new FileService(new InformationService());
+                infoExecutor.execute(parts);
+                break;
+            case "status":
+                FileService statusExecutor = new FileService(
+                        new StatusService(commitService.getSnapshotTime(), lastSnapshotFile));
+                statusExecutor.execute(parts);
+                break;
+            case "exit":
+                running = false;
+                break;
+            default:
+                System.out.println("Invalid command");
         }
     }
     private static Set<String> getSnapshotFile(File folder){
