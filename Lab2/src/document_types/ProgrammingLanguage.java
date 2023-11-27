@@ -5,7 +5,7 @@ import document_flow.FileInfo;
 import java.io.File;
 import java.util.Scanner;
 
-public class ProgrammingLanguage extends Basic{
+public class ProgrammingLanguage extends Document {
     private final FileInfo fileInfo = new FileInfo();
     File file = fileInfo.getFile(fileName);
     int lineCount;

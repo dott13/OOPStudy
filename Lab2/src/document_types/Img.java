@@ -7,10 +7,10 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class Img extends Basic{
+public class Img extends Document {
     private final FileInfo fileInfo = new FileInfo();
     File file = fileInfo.getFile(fileName);
-    String dimension;
+    private String dimension;
     public Img(String imageName, String extension, String createdDate, String lastModifiedDate) {
         super(imageName, extension, createdDate, lastModifiedDate);
         this.dimension = getImageDimensions();

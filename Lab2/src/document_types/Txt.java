@@ -5,7 +5,7 @@ import document_flow.FileInfo;
 import java.io.File;
 import java.util.Scanner;
 
-public class Txt extends Basic{
+public class Txt extends Document {
     private final FileInfo fileInfo = new FileInfo();
     File file = fileInfo.getFile(fileName);
     int wordCount;

@@ -1,6 +1,7 @@
 package services;
 
 import document_flow.FileInfo;
+import document_types.Document;
 import document_types.Img;
 import document_types.ProgrammingLanguage;
 import document_types.Txt;
@@ -35,21 +36,22 @@ public class InformationService implements IFileService {
             String extension = filename.substring(filename.lastIndexOf('.') + 1);
             String createdDate = fileInfo.getCreateDate(file.toPath());
             String lastModifiedDate = dateFormat.format(new Date(file.lastModified()));
+            
+            Document doc = null;
 
             switch (extension) {
                 case "png", "jpg", "jpeg" -> {
-                    Img image = new Img(file.getName(), extension, createdDate, lastModifiedDate);
-                    System.out.println(image);
+                    doc = new Img(file.getName(), extension, createdDate, lastModifiedDate);
                 }
                 case "txt" -> {
-                    Txt text = new Txt(file.getName(), extension, createdDate, lastModifiedDate);
-                    System.out.println(text);
+                    doc = new Txt(file.getName(), extension, createdDate, lastModifiedDate);
                 }
                 case "py", "java" -> {
-                    ProgrammingLanguage code = new ProgrammingLanguage(file.getName(), extension, createdDate, lastModifiedDate);
-                    System.out.println(code);
+                    doc = new ProgrammingLanguage(file.getName(), extension, createdDate, lastModifiedDate);
                 }
             }
+            
+            System.out.println(doc);
         } else {
             System.out.println("File not found: " + filename);
         }
