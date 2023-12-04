@@ -4,13 +4,13 @@ import interfaces.IQueue;
 
 import java.util.Arrays;
 
-public class QueueService implements IQueue {
+public class ArrayUpQueueService implements IQueue {
     private int[] queue;
     private int size;
     private int front;
     private int back;
 
-    public QueueService(){
+    public ArrayUpQueueService(){
         queue = new int[5];
         size = 0;
         front = 0;

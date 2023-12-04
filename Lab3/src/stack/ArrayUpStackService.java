@@ -4,11 +4,11 @@ import interfaces.IStack;
 
 import java.util.Arrays;
 
-public class StackService implements IStack {
+public class ArrayUpStackService implements IStack {
     private int[] stack;
     private int top;
 
-    public StackService(){
+    public ArrayUpStackService(){
         stack = new int[5];
         top = 0;
     }

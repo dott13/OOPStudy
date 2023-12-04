@@ -1,12 +1,15 @@
-import queue.QueueService;
+import queue.ArrayDownQueue;
+import queue.ArrayUpQueueService;
+import queue.LinkedQueue;
+import stack.ArrayDownStack;
 import stack.LinkedStackService;
-import stack.StackService;
+import stack.ArrayUpStackService;
 
 public class Main {
     public static void main(String[] args){
         //QUEUE
         System.out.println("\nQueue:");
-        QueueService queue = new QueueService();
+        ArrayUpQueueService queue = new ArrayUpQueueService();
 
         queue.enqueue(1);
         queue.enqueue(6);
@@ -25,7 +28,7 @@ public class Main {
         System.out.println("Is Queue empty?" + queue.isEmpty());
         //STACK
         System.out.println("\nStack:");
-        StackService stack = new StackService();
+        ArrayUpStackService stack = new ArrayUpStackService();
 
         stack.push(1);
         stack.push(5);
@@ -46,12 +49,61 @@ public class Main {
         System.out.println("\nLinked Stack");
         LinkedStackService linkedStack = new LinkedStackService();
 
-        stack.push(1);
-        stack.push(6);
-        stack.instances();
-        System.out.println("Top Instance:" + stack.peek());
-        System.out.println("Delete from LinkedStack:" + stack.pop());
+        linkedStack.push(1);
+        linkedStack.push(6);
+        linkedStack.instances();
+        System.out.println("Top Instance:" + linkedStack.peek());
+        System.out.println("Delete from LinkedStack:" + linkedStack.pop());
 
         stack.instances();
+        //ARRAY DOWN QUEUE
+        System.out.println("\nQueueDown:");
+        ArrayDownQueue queueDown = new ArrayDownQueue();
+
+        queueDown.enqueue(1);
+        queueDown.enqueue(6);
+        queueDown.enqueue(4);
+        queueDown.instances();
+
+        System.out.println("Deleted from Queue: " + queueDown.dequeue());
+        System.out.println("Deleted from Queue: " + queueDown.dequeue());
+        queueDown.enqueue(10);
+        queueDown.enqueue(1);
+
+        queueDown.instances();
+
+        queueDown.clear();
+
+        System.out.println("Is Queue empty?" + queueDown.isEmpty());
+        //Linked Queue
+        System.out.println("\nLinkedQueue:");
+        LinkedQueue queueLinked = new LinkedQueue();
+
+        queueLinked.enqueue(1);
+        queueLinked.enqueue(6);
+        queueLinked.enqueue(4);
+        queueLinked.instances();
+
+        System.out.println("Deleted from Queue: " + queueLinked.dequeue());
+        System.out.println("Deleted from Queue: " + queueLinked.dequeue());
+        queueLinked.enqueue(10);
+        queueLinked.enqueue(1);
+
+        queueLinked.instances();
+
+        queueLinked.clear();
+
+        System.out.println("Is Queue empty?" + queueLinked.isEmpty());
+        //ARRAY DOWN STACK
+        System.out.println("\nArray Down Stack");
+        ArrayDownStack downStack = new ArrayDownStack();
+
+        downStack.push(1);
+        downStack.push(6);
+        downStack.instances();
+        System.out.println("Top Instance:" + downStack.peek());
+        System.out.println("Delete from Stack:" + downStack.pop());
+
+        downStack.instances();
     }
 }

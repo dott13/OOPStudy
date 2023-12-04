@@ -1,5 +1,6 @@
 package stack;
 
+import helpers.Link;
 import interfaces.IStack;
 
 public class LinkedStackService implements IStack {
@@ -13,28 +14,28 @@ public class LinkedStackService implements IStack {
 
     @Override
     public void push(int instance){
-        top = new Link(instance, top);
+        top = new Link(instance);
         size++;
     }
 
     @Override
     public int pop(){
-        int instance = top.data;
-        top = top.next;
+        int instance = top.getData();
+        top = top.getNext();
         return instance;
     }
 
     @Override
     public int peek() {
-        return top.data;
+        return top.getData();
     }
 
     @Override
     public void instances(){
         Link temp = top;
         while (temp != null){
-            System.out.println(temp.data);
-            temp = temp.next;
+            System.out.println(temp.getData());
+            temp = temp.getNext();
         }
         System.out.println("null");
     }
@@ -42,7 +43,7 @@ public class LinkedStackService implements IStack {
     public void clear(){
         Link temp = top;
         while (temp != null) {
-            System.out.println(temp.data);
+            System.out.println(temp.getData());
         }
         System.out.println("null");
     }
